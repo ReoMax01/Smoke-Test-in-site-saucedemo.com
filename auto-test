@@ -19,127 +19,127 @@ password = "secret_sauce"
 user_name = driver.find_element(By.XPATH, '//input[@id="user-name"]') #Ищем поле ввода логиа
 user_name.send_keys(login) #Ввод логина
 print("Логин введён")
-# time.sleep(1)
+time.sleep(1)
 
 user_pass = driver.find_element(By.XPATH, "//input[@id='password']") #Ищем поле ввода пароля
 user_pass.send_keys(password) #Ввод пароля
 print("Пароль введён")
-# time.sleep(1)
+time.sleep(1)
 
 button_login = driver.find_element(By.XPATH, "//input[@value='Login']") #Ищем пкнопку авторизации
 button_login.click() #Нажимаем на кнопку авторизации
 print("Нажата кнопка авторизации")
-# time.sleep(1)
+time.sleep(1)
 
 """Информация о товаре №1 в главном меню"""
 product_1 = driver.find_element(By.XPATH, "//a[@id='item_4_title_link']") #Ищем карточку товара №1
 value_product_1 = product_1.text #Определяем название карточки товара
 print("Найден товар №1 — ", value_product_1)
-# time.sleep(1)
+time.sleep(1)
 
 price_1 = driver.find_element(By.XPATH, "//*[@id='inventory_container']/div/div[1]/div[2]/div[2]/div") #Ищем стоимость товара №1
 value_price_1 = price_1.text #Определяем стоимость товара
 print("Стоимость товара №1 — ", value_price_1)
-# time.sleep(1)
+time.sleep(1)
 
 cart_select = driver.find_element(By.XPATH, "//button[@id='add-to-cart-sauce-labs-backpack']") #Ищем кнопку добавления товара №1 в корзину
 cart_select.click() #Добавляем товар №1 в корзину
 print("Товар №1 добавлен в корзину")
-# time.sleep(1)
+time.sleep(1)
 
 """Информация о товаре №2 в главном меню"""
 product_2 = driver.find_element(By.XPATH, "//a[@id='item_0_title_link']") #Ищем карточку товара №2
 value_product_2 = product_2.text #Определяем название товара №2
 print("Найден товар №2 — ", value_product_2)
-# time.sleep(1)
+time.sleep(1)
 
 price_2 = driver.find_element(By.XPATH, "//*[@id='inventory_container']/div/div[2]/div[2]/div[2]/div") #Ищем стоимость товара №2
 value_price_2 = price_2.text #Определяем стоимость товара №2
 print("Стоимость товара №1 — ", value_price_2)
-# time.sleep(1)
+time.sleep(1)
 
 cart_select_2 = driver.find_element(By.XPATH, "//button[@id='add-to-cart-sauce-labs-bike-light']") #Ищем кнопку добавления товара №2 в корзину
 cart_select_2.click() #Добавляем товар №2 в корзину
 print("Товар №2 добавлен в корзину")
-# time.sleep(1)
+time.sleep(1)
 
 cart = driver.find_element(By.XPATH, "//a[@class='shopping_cart_link']") #Переходим в корзину
 cart.click()
 print("Корзина открыта")
-# time.sleep(1)
+time.sleep(1)
 
 """Информация о товаре №1 в корзине"""
 cart_product_1 = driver.find_element(By.XPATH, "//a[@id='item_4_title_link']") #Ищем товар #1 в корзине
 cart_value_product_1 = cart_product_1.text #Определяем название товара №1 в корзине
 print("Найден товар №1 в корзине — ", cart_value_product_1)
-# time.sleep(1)
+time.sleep(1)
 
 assert value_product_1 == cart_value_product_1 #Сравниваем, чтобы название товара в корзине, совпадало с названием товара в главном меню
 print("Название товара №1 совпадает")
-# time.sleep(1)
+time.sleep(1)
 
 cart_price_1 = driver.find_element(By.XPATH, "//*[@id='cart_contents_container']/div/div[1]/div[3]/div[2]/div[2]/div") #Ищем стоимость товара №1 в корзине
 cart_value_price_1 = cart_price_1.text #Определяем стоимость товара №1 в корзине
 print("Стоимость товара №1 в корзине — ", cart_value_price_1)
-# time.sleep(1)
+time.sleep(1)
 
 assert value_price_1 == cart_value_price_1 #Сравниваем, чтобы стоимость товара №1 в корзине, совпадала со стоимостью товара №1 в главном меню
 print("Стоимость товара №1 совпадает")
-# time.sleep(1)
+time.sleep(1)
 
 """Информация о товаре №2 в корзине"""
 cart_product_2 = driver.find_element(By.XPATH, "//a[@id='item_0_title_link']") #Ищем товар №2 в корзине
 cart_value_product_2 = cart_product_2.text #Определяем название товара №2 в корзине
 print("Найден товар №2 в корзине — " , cart_value_product_2)
-# time.sleep(1)
+time.sleep(1)
 
 assert value_product_2 == cart_value_product_2 #Сравниваем, чтобы название товара №2 в корзине, совпадало с названием товара №2 в главном меню
 print("Название товара №2 совпадает")
-# time.sleep(1)
+time.sleep(1)
 
 cart_price_2 = driver.find_element(By.XPATH, "//*[@id='cart_contents_container']/div/div[1]/div[4]/div[2]/div[2]/div") #Ищем стоимость товара №2 в корзине
 cart_value_price_2 = cart_price_2.text #Определяем стоимость товара №2 в корзине
 print("Стоимость товара №2 в корзине — ", cart_value_price_2)
-# time.sleep(1)
+time.sleep(1)
 
 assert value_price_2 == cart_value_price_2 #Сравниваем, чтобы стоимость товара №2 в корзине, совпадала со стоимостью товара №2 в главном меню
 print("Стоимость товара №2 совпадает")
-# time.sleep(1)
+time.sleep(1)
 
 """Переход в окно ввода информации пользователя"""
 checkout = driver.find_element(By.XPATH, "//button[@id='checkout']") #Переход на страницу ввода информации клиента
 checkout.click()
 print("Переход на страницу ввода информации клиента")
-# time.sleep(1)
+time.sleep(1)
 
 """Информация о клиенте"""
 
 first_name = driver.find_element(By.XPATH, "//input[@id='first-name']") #Вводим имя клиента
 first_name.send_keys("Максим")
 print("Введено имя")
-# time.sleep(1)
+time.sleep(1)
 
 last_name = driver.find_element(By.XPATH, "//input[@id='last-name']") #Вводим фамилию клиента
 last_name.send_keys("Максимович")
 print("Введена фамилия")
-# time.sleep(1)
+time.sleep(1)
 
 post_code = driver.find_element(By.XPATH, "//input[@id='postal-code']") #Вводим почтовый индекс
 post_code.send_keys("123456")
 print("Введен почтовый индекс")
-# time.sleep(1)
+time.sleep(1)
 
 """Переход на страницу оформления заказа"""
 button_continue = driver.find_element(By.XPATH, "//input[@id='continue']") #Переход на страницу оформления
 button_continue.click()
 print("Переход на страницу оплаты")
-# time.sleep(1)
+time.sleep(1)
 
 """Сравниваем информацию товара №1 на странице оформления заказа, с информацией в главном меню"""
 checkout_product_1 = driver.find_element(By.XPATH, "//a[@id='item_4_title_link']") #Ищем товар #1 на странице оформления заказа
 checkout_value_product_1 = checkout_product_1.text #Определено название товара №1 на странице оформления заказа
 print("Найден товар #1 — ", checkout_value_product_1)
-# time.sleep(1)
+time.sleep(1)
 
 assert value_product_1 == checkout_value_product_1 #Сравниваем название товара №1 на странице с оформление заказа, с названием товара №1 в главном меню
 print("Название товара #1 совпадает")
@@ -147,26 +147,26 @@ print("Название товара #1 совпадает")
 checkout_price_1 = driver.find_element(By.XPATH, "//*[@id='checkout_summary_container']/div/div[1]/div[3]/div[2]/div[2]/div") #Ищем стоимость товара №1 на странице оформления
 checkout_value_price_1 = checkout_price_1.text #Определена стоимость товара №1 на странице оформления заказа
 print("Стоимость товара #1 — ", checkout_value_price_1)
-# time.sleep(1)
+time.sleep(1)
 
 assert value_price_1 == checkout_value_price_1 #Сравниваем стоимость товара №1 на странице с оформлением, со стоимость товара №1 в главном меню
 print("Стоимость товара №1 совпадает")
-# time.sleep(1)
+time.sleep(1)
 
 """Сравниваем информацию товара №2 на странице оформления заказа, с информацией в главном меню"""
 checkout_product_2 = driver.find_element(By.XPATH, "//a[@id='item_0_title_link']") #Ищем товар №2 на странице оформления заказа
 checkout_value_product_2 = checkout_product_2.text #Определяем название товара №2 на странице оформления заказа
 print("Найден товар №2 — ", checkout_value_product_2)
-# time.sleep(1)
+time.sleep(1)
 
 assert value_product_2 == checkout_value_product_2 #Сравниваем название товара №2 на странице с оформление заказа, с названием товара №2 в главном меню
 print("Название товара №2 совпадает")
-# time.sleep(1)
+time.sleep(1)
 
 checkout_price_2 = driver.find_element(By.XPATH, "//*[@id='checkout_summary_container']/div/div[1]/div[4]/div[2]/div[2]/div") #Ищем стоимость товара №2 на странице оформления
 checkout_value_price_2 = checkout_price_2.text #Определена стоимость товара №2 на странице оформления заказа
 print("Стоимость товара №1 — ", checkout_value_price_2)
-# time.sleep(1)
+time.sleep(1)
 
 assert value_price_2 == checkout_value_price_2 #Сравниваем стоимость товара №2 на странице с оформлением, со стоимость товара №2 в главном меню
 print("Стоимость товара №2 совпадает")
